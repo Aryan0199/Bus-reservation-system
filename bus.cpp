@@ -4,7 +4,7 @@
 #include<stdlib.h>
 using namespace std;
 static int p=0;
-class server{
+class server{                         //Class server is used to store details of all the buses running.
     char busno[5];
     char driver[10];
     char arrival[5];
@@ -20,13 +20,13 @@ public:
     void avail();
     void position(int l);
 }
-        bus[10];
-void vline(char x){
+        bus[10];                       //Here bus[10] is the object of objects. 
+void vline(char x){                    //Just to draw vertical line
     for(int i=120;i>=0;i--){
         cout<<x;
     }
 }
-void server::install() {
+void server::install() {              //install is data function used to add a new bus in the server.
     cout<<"Enter bus number: ";
     cin>>bus[p].busno;
     cout<<"Enter driver's name: ";
@@ -42,7 +42,7 @@ void server::install() {
     bus[p].empty();
     p++;
 }
-void server::allotment() {
+void server::allotment() {               //allotment is data fuction used to allot seat to the user.
     int seat;
     char number[5];
     top:
@@ -86,14 +86,14 @@ void server::allotment() {
         goto top;
     }
 }
-void server::empty() {
+void server::empty() {                        //Marks all the seats "empty" of the bus i.e can be alloted  
     for (int i = 0; i <8 ; ++i) {
         for (int j = 0; j < 4; ++j) {
             strcpy(bus[p].seat[i][j],"Empty");
         }
     }
 }
-void server::show()  {
+void server::show()  {                     //Shows the details of seats booked and yet to book in a bus.
     int n;
     char number[5];
     cout<<"Enter Bus number\n";
@@ -124,7 +124,7 @@ void server::show()  {
         cout<<"Enter correct bus no.\n";
     }
 }
-void server::position(int l) {
+void server::position(int l) {       //USed for displaying details proerly and also no. of empty seats in a bus.          
     {
         int s=0;p=0;
         for (int i =0; i<8;i++)
@@ -157,7 +157,7 @@ void server::position(int l) {
         cout<<"\n\nThere are "<<p<<" seats empty in Bus No: "<<bus[l].busno;
     }
 }
-void server::avail() {
+void server::avail() {                      //Shows all the available buses.
     for (int n = 0; n < p; ++n) {
         vline('*');
         cout<<"Bus number: \t"<<bus[n].busno
@@ -172,7 +172,7 @@ void server::avail() {
 int main(){
     int z;
     system("cls");
-    while(1) {
+    while(1) {                       
         cout << "\n\n\n\n";
         cout << "\t\t\t1.Install\n\t\t\t";
         cout << "2.Reservation\n\t\t\t";

@@ -26,7 +26,7 @@ void vline(char x){                    //Just to draw vertical line
         cout<<x;
     }
 }
-void server::install() {              //install is data function used to add a new bus in the server.
+void server::install() {              //install is member function used to add a new bus in the server.
     cout<<"Enter bus number: ";
     cin>>bus[p].busno;
     cout<<"Enter driver's name: ";
@@ -42,7 +42,7 @@ void server::install() {              //install is data function used to add a n
     bus[p].empty();
     p++;
 }
-void server::allotment() {               //allotment is data fuction used to allot seat to the user.
+void server::allotment() {               //allotment is member fuction used to allot seat to the user.
     int seat;
     char number[5];
     top:
